@@ -1,0 +1,42 @@
+import express from "express";
+import cors from "cors";
+import helmet from "helmet";
+import "dotenv/config"
+import { ApolloServer } from "@apollo/server";
+import { expressMiddleware } from "@as-integrations/express5";
+
+import schema from "./graphql/schema.js";
+import { createContext } from "./graphql/context.js";
+import mongoose from "mongoose";
+
+const connect_db = async () => {
+  try {
+    await mongoose.connect("mongodb://localhost:27017/inaiudb");
+    console.log("mongodb connected successfully");
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const app = express();
+
+app.use(cors());
+app.use(helmet());
+app.use(express.json());
+
+const apolloServer = new ApolloServer({
+  schema,
+});
+connect_db();
+await apolloServer.start();
+
+app.use(
+  "/graphql",
+  expressMiddleware(apolloServer, {
+    context: createContext,
+  }),
+);
+
+app.listen(4000, () => {
+  console.log("Server running on http://localhost:4000/graphql");
+});

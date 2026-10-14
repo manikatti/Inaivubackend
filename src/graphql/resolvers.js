@@ -5,7 +5,7 @@ import interestService from "../services/interestService.js";
 import shortlistService from "../services/shortlistService.js";
 import chatService from "../services/chatService.js";
 import paymentService from "../services/paymentService.js";
-import privacyService from "../services/privacyService.js";
+
 
 
 

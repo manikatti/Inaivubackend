@@ -164,10 +164,7 @@ const resolvers = {
       return adminService.toggleUserActiveStatus(userId, isActive);
     },
   },
-   updatePrivacySettings: async (_, { privacySettings }, context) => {
-      const user = requireAuth(context);
-      return privacyService.updatePrivacySettings(user.userId, privacySettings);
-    },
+  
 
 
   User: {

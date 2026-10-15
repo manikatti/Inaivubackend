@@ -11,7 +11,7 @@ import mongoose from "mongoose";
 
 const connect_db = async () => {
   try {
-    await mongoose.connect("mongodb://localhost:27017/inaiudb");
+    await mongoose.connect("mongodb+srv://manikatti90_db_user:Ww64BQoMcU5BQ4XR@cluster0.bb04vo8.mongodb.net/inaiudb?retryWrites=true&w=majority");
     console.log("mongodb connected successfully");
   } catch (error) {
     console.log(error);

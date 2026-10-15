@@ -26,6 +26,7 @@ app.use(express.json());
 
 const apolloServer = new ApolloServer({
   schema,
+  introspection: true
 });
 connect_db();
 await apolloServer.start();

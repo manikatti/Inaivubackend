@@ -56,7 +56,7 @@ const profileSchema = new mongoose.Schema(
     education: { type: String },
     occupation: { type: String },
     income: { type: String },
-    height: { type: Number },
+    height: { type: String },
     city: { type: String },
     district: { type: String },
     state: { type: String },

@@ -69,7 +69,7 @@ const typeDefs = gql`
     education: String
     occupation: String
     income: String
-    height: Float
+    height: String
     city: String
     district: String
     state: String
@@ -88,7 +88,7 @@ const typeDefs = gql`
     education: String
     occupation: String
     income: String
-    height: Float
+    height: String
     city: String
     district: String
     state: String

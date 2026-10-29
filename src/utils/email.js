@@ -3,14 +3,14 @@ import nodemailer from "nodemailer";
 const transporter = nodemailer.createTransport({
   service: "gmail", // Gmail அல்லது உங்கள் SMTP
   auth: {
-    user: process.env.EMAIL_USER || "manikatti90@gmail.com",
-    pass: process.env.EMAIL_PASS || "kcjx beod nohi mgsx",
+    user: "manikatti90@gmail.com",
+    pass: "kcjx beod nohi mgsx",
   },
 });
 
 export const sendOtpEmail = async (email, otp) => {
   const mailOptions = {
-    from: '"Matrimony App" <noreply@matrimony.com>',
+    from: '"Inai App" <manikatti90@gmail.com>',
     to: email,
     subject: "உங்கள் பதிவுக்கான OTP சரிபார்ப்பு எண்",
     html: `

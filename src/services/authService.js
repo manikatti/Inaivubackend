@@ -40,7 +40,7 @@ const generateOTP = () =>
      }
 
      // Email மூலம் OTP அனுப்புதல்
-     await sendOtpEmail(email, otp);
+    // await sendOtpEmail(email, otp);
 
      return {
        message:
